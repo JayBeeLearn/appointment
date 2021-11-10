@@ -81,7 +81,7 @@
         
         <div class="container">
             @yield('content')
-            <span >Designed by yours truly <span class="design">JayBee 2021 </span> </span>
+            <span class="signature" >Designed by yours truly <span class="design">JayBee 2021 </span> </span>
         </div>
     </div>
       
