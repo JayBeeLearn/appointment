@@ -6,7 +6,7 @@
            Sign In
         </h2>
     </div>
-    <div class="container d-flex justify-content-center">
+    <div class="container d-flex justify-content-around">
         <div class="form-group p-2 mx-8">
             <form action="{{ route('login') }}" method="post">
                 @csrf

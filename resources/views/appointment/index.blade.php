@@ -40,7 +40,7 @@
                             <td>
                                 <a href="{{ route('appointment.show', $appointment->id) }}" class="btn btn-success"> {{ $appointment->appointment_topic }}</a>
                             </td>
-                            <td style="width:360px">
+                            <td style="">
                                 <form action="{{ route('appointment.destroy', $appointment->id) }}" method="POST">
                                     {{-- @if (auth()->user()->id = $profile) --}}
 

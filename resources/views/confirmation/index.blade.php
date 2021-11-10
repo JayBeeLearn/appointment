@@ -34,42 +34,46 @@
                 </form>
             </div>
         </div>
-        @if(auth()->check())
-            @if(count($confirmations)>0)
-            <div class="container">
-                <table class="table table-bordered">
-                    <tr>
-                        <th>Meeting With</th>
-                        <th>Purpose of Meeting</th>
-                        <th>Quick Actions</th>
-                    </tr>
-                    @foreach($confirmations as $confirmation)
-                        <tr>
-                            <td>{{ $confirmation->name }}</td>
-                            <td>
-                                <a href="{{ route('confirmation.show', $confirmation->id) }}" class="btn btn-success"> {{ $confirmation->appointment_topic }}</a>
-                            </td>
-                            <td style="width:360px">
-                                <form action="{{ route('confirmations.destroy', $confirmation->id) }}" method="POST">
-                                    
-                                    <a href="{{ route('confirmations.edit', $confirmation->id) }}" class="btn btn-warning my-1"> Reschedule</a>
-                                    @csrf 
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure you are done with this meeting?')">Completed!</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </table>
-            </div>
-                
-            @else()
-                <h3 class="text-center text-danger"> You Don't have a Meeting </h3>
-                <div class="container text-center">
-                    <a href="{{ route('meeting.create') }}" class="btn btn-primary ">Create New  Meeting Appointment</a>
-                </div> 
+
+        <div class="container">
+            @if(auth()->check())
+                @if(count($confirmations)>0)
+                    <div class="container d-flex">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Meeting With</th>
+                                <th>Purpose of Meeting</th>
+                                <th>Quick Actions</th>
+                            </tr>
+                            @foreach($confirmations as $confirmation)
+                                <tr>
+                                    <td>{{ $confirmation->name }}</td>
+                                    <td>
+                                        <a href="{{ route('confirmation.show', $confirmation->id) }}" class="btn btn-success"> {{ $confirmation->appointment_topic }}</a>
+                                    </td>
+                                    <td style="">
+                                        <form action="{{ route('confirmations.destroy', $confirmation->id) }}" method="POST">
+                                            
+                                            <a href="{{ route('confirmations.edit', $confirmation->id) }}" class="btn btn-warning my-1"> Reschedule</a>
+                                            @csrf 
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure you are done with this meeting?')">Completed!</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
+                        
+                    @else()
+                        <h3 class="text-center text-danger"> You Don't have a Meeting </h3>
+                        <div class="container text-center">
+                            <a href="{{ route('meeting.create') }}" class="btn btn-primary ">Create New  Meeting Appointment</a>
+                        </div> 
+                @endif
             @endif
-        @endif
+        </div>
+        
 
         
     </div>
