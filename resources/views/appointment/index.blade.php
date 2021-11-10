@@ -6,7 +6,7 @@
         <div class="container d-flex justify-content-end">
             <div class=" search ">
                 <form action="{{ route('profile') }}" method="GET" role="search">
-                    <input type="search" name="search" id="myTextField" class="no-outline " placeholder="Locate a user"> 
+                    <input type="search" name="search" id="search" class="no-outline " placeholder="Locate a user"> 
                     <button type="submit" class=" "><i class="fa fa-search "></i></button>
                 </form>
             </div> 
@@ -69,11 +69,9 @@
 
                 </div> 
 
-                <div class="container">
-                    <a href="{{ route('profile') }}">
-                        <button type="button" onclick="function focusMethod()" data-target="search" class="container bg bg-primary my-4 mx-4 p-3 rounded text-white">
-                            <h1>Locate a Client or Business and Book for an Appointment </h1>
-                        </button>
+                <div class="d-flex justify-content-center">
+                    <a href="#search" class="btn btn-primary my-4 mx-4 p-3 rounded text-white">
+                            <h3>Locate a Client or Business and Book for an Appointment </h3>
                     </a>
                 </div>
             @endif

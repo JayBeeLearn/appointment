@@ -25,7 +25,7 @@
             <tr>
                 <th>Username</th>
                 <th>Works At</th>
-                <th>ID</th>
+                <th>Gender</th>
             </tr>
             @foreach ($profile as $user)
                 <tr>
@@ -33,7 +33,7 @@
                         <a href="{{ route('appointment.create', $user->id) }}" class="btn btn-success"> {{ $user->username }}</a>
                     </td>
                     <td>{{ $user->work_place }}</td>
-                    <td>{{ $user->id }}</td>
+                    <td>{{ $user->gender }}</td>
                 </tr>
             @endforeach
         </table>

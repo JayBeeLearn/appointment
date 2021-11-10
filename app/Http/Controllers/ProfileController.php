@@ -44,7 +44,7 @@ class ProfileController extends Controller
             $file->move('uploads/profilePics/', $filename);
             $profile->profile_photo = $filename;
         } else {
-            return $request;
+            return 
             $profile->profile_photo = '';
         }
         // dd($profile);

@@ -11,7 +11,7 @@
     </div>
     
     <div class="container d-flex justify-content-center">
-        <div class="form-group p-2 w-75">
+        <div class="form-group p-2">
             <form action="{{ route('auth.store') }}" method="POST">
                 @csrf
             

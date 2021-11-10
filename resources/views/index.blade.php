@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container justify-content-end col-lg-12 margin-tb">
+<div class="container">
 
     {{-- The Search bar for locating users  --}}
     <div class="container d-flex justify-content-end">
@@ -15,25 +15,19 @@
     </div>
     
 
-    <div class="container d-flex flex-column justify-content-between">
-        <a href="{{ route('profile') }}">
-            <button type="button" onclick="function focusMethod()" data-target="search" class="container bg bg-primary my-4 mx-4 p-3 rounded text-white">
-                <h1>Locate a Client or Business and Book for an Appointment </h1>
-            </button>
+    <div class="d-flex flex-column justify-content-between">
+        <a href="#search" class="btn btn-primary my-4 mx-4 p-3 rounded text-white">
+                <h3>Locate a Client or Business and Book for an Appointment </h3>
         </a>
         
         @guest
-            <a href="{{ route('register') }}">
-                <button class="container bg bg-success my-4 mx-4 p-3 rounded text-white">
-                    <h1>Make it easier for clients and customers to locate you for fast appointments </h1>
-                </button>
+            <a href="{{ route('register') }}" class="btn btn-success my-4 mx-4 p-3 rounded text-white">
+                    <h3>Make it easier for clients and customers to locate you for fast appointments </h3>
             </a>
         
 
-            <a href="{{ route('login') }}">
-                <button class="container bg bg-info my-4 mx-4 p-3 rounded text-white">
-                    <h1> Organize all your meetings and appointments in one place </h1>
-                </button>
+            <a href="{{ route('login') }}" class="btn btn-info my-4 mx-4 p-3 rounded text-white">
+                    <h3> Organize all your meetings and appointments in one place </h3>
             </a>
         @endguest
     </div>

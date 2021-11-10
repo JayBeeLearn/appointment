@@ -22,7 +22,7 @@
   <body>
 
     <div class="container">
-        <nav class="navbar nav navbar-expand justify-content-between">
+        <nav class="nav nav justify-content-between  navbar-expand flex-column flex-md-row">
           <ul class=" navbar-nav">
             @guest
                 <li class="nav-item">
