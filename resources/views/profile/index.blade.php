@@ -21,7 +21,7 @@
 
     
     <div class="container">
-        <table class="table table-bordered">
+        <table class="table table-bordered table-responsive">
             <tr>
                 <th>Username</th>
                 <th>Works At</th>

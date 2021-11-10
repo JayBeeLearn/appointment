@@ -39,7 +39,7 @@
             @if(auth()->check())
                 @if(count($confirmations)>0)
                     <div class="container d-flex">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered table-responsive">
                             <tr>
                                 <th>Meeting With</th>
                                 <th>Purpose of Meeting</th>
