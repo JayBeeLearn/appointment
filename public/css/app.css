@@ -1,0 +1,44 @@
+.come{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 150px;
+    color: red;
+}
+
+.search{
+    /* margin-left: 58vw; */
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 8px 20px;
+    
+}
+
+
+.no-outline{
+    outline: none;
+    border: none;
+}
+
+.line{
+    display: inline;
+}
+
+
+/* Profile Display Head  */
+.head{
+    background-color: rgb(211, 211, 211);
+    padding: 10px;
+    
+}
+
+.display{
+    background-color: rgb(245, 235, 235);
+    padding: 10px;
+    margin: 0px 0px 20px 35px;
+    border-radius: 5px;
+    margin-top: 0px !important; 
+
+}
+
+
+
+/* Profile Display Head ends Here  */
