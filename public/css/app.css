@@ -42,9 +42,14 @@
 
 
 /* Profile Display Head ends Here  */
+.signature{
+    text-align: center;
+}
 
 .design{
-    color: aqua;
+    color: rgb(2, 5, 175);
     font-weight: bold;
-    border: 1px solid rgb(42, 243, 42);
+    border: 1px solid rgb(1, 83, 1);
+    padding: 2px 4px;
+    text-align: center;
 }
