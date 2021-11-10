@@ -28,7 +28,7 @@
        
         @if(auth()->check())
             @if(count($appointments)>0)
-                <table class="table table-bordered">
+                <table class="table table-bordered table-responsive">
                     <tr>
                         <th>Appointment With</th>
                         <th>Purpose of Appointment</th>
