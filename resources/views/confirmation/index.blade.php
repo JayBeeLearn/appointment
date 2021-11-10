@@ -66,7 +66,7 @@
             @else()
                 <h3 class="text-center text-danger"> You Don't have a Meeting </h3>
                 <div class="container text-center">
-                    <a href="{{ route('appointment.percreate') }}" class="btn btn-primary ">Create New  Appointment</a>
+                    <a href="{{ route('meeting.create') }}" class="btn btn-primary ">Create New  Meeting Appointment</a>
                 </div> 
             @endif
         @endif

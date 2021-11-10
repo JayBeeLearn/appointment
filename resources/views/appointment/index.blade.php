@@ -61,13 +61,21 @@
             @else()
                 <h3 class="text-center text-danger"> You Don't have an appointment </h3>
                 <div class="container text-center">
-                    <a href="{{ route('appointment.percreate') }}" class="btn btn-primary ">Create New  Appointment</a>
+                    <a href="{{ route('meeting.create') }}" class="btn btn-primary ">Create New  Meeting Appointment </a>
                     <span class="mx-4">OR</span>
                     
                     <a href="{{ route('appointment.confirm') }}" class="btn btn-success ">Check Confirm Meetings</a>
 
 
                 </div> 
+
+                <div class="container">
+                    <a href="{{ route('profile') }}">
+                        <button type="button" onclick="function focusMethod()" data-target="search" class="container bg bg-primary my-4 mx-4 p-3 rounded text-white">
+                            <h1>Locate a Client or Business and Book for an Appointment </h1>
+                        </button>
+                    </a>
+                </div>
             @endif
         @endif
 
