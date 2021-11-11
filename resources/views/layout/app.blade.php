@@ -22,60 +22,71 @@
   <body>
 
     <div class="container">
-        <nav class="nav nav justify-content-between  navbar-expand flex-column flex-md-row">
-          <ul class=" navbar-nav">
-            @guest
-                <li class="nav-item">
-                  <a href="{{ route('home') }}" class="nav-link">Home</a> 
-                </li>
-            @endguest
+        <nav class="navbar navbar-toggleable-sm bg-gray navbar-inverse nav   navbar-expand ">
+          <div class="container">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav"> 
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            {{-- <div class="collapse navbar-collape" id="mainNav"> --}}
+                <div class="collapse navbar-collape justify-content-between" id="mainNav">
+                    <ul class=" navbar-nav">
+                      @guest
+                          <li class="nav-item">
+                            <a href="{{ route('home') }}" class="nav-link">Home</a> 
+                          </li>
+                      @endguest
+                        
+                      @auth
+                      
+                        <li class="nav-item">
+                            <a href="{{ route('appointment.index') }}" class="nav-link">Appointments</a> 
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('appointment.confirm') }}" class="nav-link">Meetings</a> 
+                        </li> 
+                      @endauth
+
+                    </ul>
+
+                    <ul class="navbar-nav">
+
+                      @auth
+                          <li class="nav-item">
+                              <a href="{{ route('profile.show') }}" class="nav-link">{{ auth()->user()->name }}</a>
+                          </li>
+
+                          <li>
+                            
+                          </li>
+
+                          <li class="nav-item">
+                              {{-- <a href="" class="nav-link">Logout</a> --}}
+                              <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+
+                                <button type="submit" class="btn text-primary">Logout</button>
+                              </form>
+                          </li>
+                      @endauth
+
+                      @guest
+                          <li class="nav-item">
+                              <a href="{{ route('register') }}" class="nav-link">Sign Up</a>
+                          </li>
+
+                          <li class="nav-item">
+                              <a href="{{ route('login') }}" class="nav-link">Sign In</a>
+                          </li>
+                      @endguest
+                          
+
+                        
+                    </ul>
+                </div>
+            {{-- </div> --}}
               
-              @auth
-               
-                 <li class="nav-item">
-                    <a href="{{ route('appointment.index') }}" class="nav-link">Appointments</a> 
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('appointment.confirm') }}" class="nav-link">Meetings</a> 
-                </li> 
-              @endauth
-
-          </ul>
-
-          <ul class="navbar-nav">
-
-            @auth
-                 <li class="nav-item">
-                    <a href="{{ route('profile.show') }}" class="nav-link">{{ auth()->user()->name }}</a>
-                </li>
-
-                <li>
-                  
-                </li>
-
-                <li class="nav-item">
-                    {{-- <a href="" class="nav-link">Logout</a> --}}
-                    <form action="{{ route('logout') }}" method="POST">
-                      @csrf
-
-                      <button type="submit" class="btn text-primary">Logout</button>
-                    </form>
-                </li>
-            @endauth
-
-            @guest
-                <li class="nav-item">
-                    <a href="{{ route('register') }}" class="nav-link">Sign Up</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ route('login') }}" class="nav-link">Sign In</a>
-                </li>
-            @endguest
-                
-
-               
-          </ul>
+          </div>
+          
         </nav>
 
         
