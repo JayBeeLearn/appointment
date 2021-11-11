@@ -19,7 +19,7 @@
     <script src="{{ url('js/main.js') }}"></script>
     
   </head>
-  <body>
+  <body class="bg bg-light">
       <nav class="navbar navbar-expand-lg navbar-light navbar-inverse" style="background-color: #e3f2fd;">
           <div class="container">
             <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav"> 
@@ -27,36 +27,43 @@
             </button>
             <div class="collapse navbar-collapse " id="mainNav">
                 <div class="container collapse navbar-collapse justify-content-between" id="mainNav">
-                  <div class="navbar-nav">
+                  <ul class="navbar-nav ">
                       @guest
-                            <a href="{{ route('home') }}" class="nav-item nav-link">Home</a> 
+                          <li class="nav-item">
+                              <a href="{{ route('home') }}" class=" nav-link text-primary">Home</a> 
+                          </li>  
                       @endguest
                       @auth
-                        <a href="{{ route('appointment.index') }}" class="nav-item nav-link">Appointments</a> 
-                        <a href="{{ route('appointment.confirm') }}" class="nav-item nav-link">Meetings</a> 
+                        <li class="nav-item ">
+                          <a href="{{ route('appointment.index') }}" class="nav-link text-primary">Appointments</a> 
+                        </li>
+                        <li class="nav-item">
+                          <a href="{{ route('appointment.confirm') }}" class="nav-link text-primary">Meetings</a> 
+                        </li>
                       @endauth
-                  </div>
-                  <div class="navbar-nav">
+                  </ul>
+
+                  <ul class="navbar-nav">
                        @auth
-                          <a href="{{ route('profile.show') }}" class="nav-item nav-link">{{ auth()->user()->name }}</a>
-                          {{-- <a href="" class="nav-link">Logout</a> --}}
-                          <form action="{{ route('logout') }}" method="POST">
-                            @csrf
-                              <button type="submit"  class="btn text-primary nav-item nav-link ">Logout</button>
-                          </form>
+                       <li class="nav-item">
+                            <a href="{{ route('profile.show') }}" class="nav-link text-primary"> {{ auth()->user()->name }}</a>
+                             {{-- <a href="" class="nav-link">Logout</a> --}}
+                       </li>
+                         
+                          
+                          <li class="nav-item">
+                            <form action="{{ route('logout') }}" method="POST">
+                              @csrf
+                                <button type="submit"  class="btn text-primary  nav-link ">Logout</button>
+                            </form>
+                          </li>
                       @endauth
 
                        @guest
                           <a href="{{ route('register') }}" class="nav-item nav-link">Sign Up</a>
                           <a href="{{ route('login') }}" class="nav-item nav-link">Sign In</a>
                         @endguest
-                  </div> 
-
-                     
-                          
-
-                        
-                    </ul>
+                  </ul> 
                 </div>
             </div>
           </div>
