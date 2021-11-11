@@ -15,7 +15,16 @@
 }
 
 
-.no-outline{
+.no-outline-input{
+    outline: none;
+    border: none;
+    display: inline;
+    background: none;
+    width: 150px;
+    /* margin: 0px 10px; */
+}
+
+.no-outline-button{
     outline: none;
     border: none;
     display: inline;

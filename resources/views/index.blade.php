@@ -3,16 +3,15 @@
 @section('content')
 
 <div class="container">
-
-    {{-- The Search bar for locating users  --}}
-        <div class="container d-flex justify-content-end">
+   {{-- The Search bar for locating users  --}}
+        <div class="container d-flex justify-content-end my-1">
             <div class=" search ">
                 <form action="{{ route('profile') }}" method="GET" role="search">
-                    <input type="search" name="search" id="search" class="no-outline " placeholder="Locate a user"> 
-                    <button type="submit" class="no-outline "><i class="fa fa-search "></i></button>
+                    <input type="search" name="search" id="search" class="no-outline-input " placeholder="Locate a user"> 
+                    <button type="submit" class="no-outline-button "><i class="fa fa-search "></i></button>
                 </form>
             </div> 
-        </div> 
+        </div>
 
     <div class="d-flex flex-column justify-content-between">
         <a href="#search" class="btn btn-primary my-4 mx-4 p-3 rounded text-white">
