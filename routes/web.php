@@ -45,6 +45,8 @@ Route::get('create', [LogoutController::class, 'external'])->name('create');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::post('/profile', [ProfileController::class, 'store'])->name('profile.store');
 Route::get('/profile/show/', [ProfileController::class, 'show'])->name('profile.show');
+Route::get('/profile/show/{profile}', [ProfileController::class, 'viewProfile'])->name('viewProfile');
+
 Route::get('/profile/create', [ProfileController::class, 'create'])->name('profile.create');
 Route::get('profile/edit/{profile}', [ProfileController::class, 'edit'])->name('profile.edit');
 Route::put('profile/{profile}', [ProfileController::class, 'update'])->name('profile.update');

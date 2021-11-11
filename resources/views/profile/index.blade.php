@@ -33,7 +33,8 @@
             @foreach ($profile as $user)
                 <tr>
                     <td>
-                        <a href="{{ route('appointment.create', $user->id) }}" class="btn btn-success"> {{ $user->username }}</a>
+                        <a href="{{ route('viewProfile', $user->id) }}" class="btn btn-success"> {{ $user->username }}</a>
+
                     </td>
                     <td>{{ $user->work_place }}</td>
                     <td>{{ $user->gender }}</td>

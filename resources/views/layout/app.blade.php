@@ -64,7 +64,7 @@
         </nav>
 
         
-        <div class="container">
+        <div class="container my-1">
             @yield('content')
             <div class="container d-flex-justify-content-center">
                 <div class="signature" >Designed by yours truly <span class="design">

@@ -24,7 +24,7 @@
 
                  <div class="form-group py-2">
                     <label for="date">Date of Birth</label>
-                    <input type="date" name="date" placeholder="01-01-1980" class="form-control" >
+                    <input type="date" name="date_of_birth" placeholder="01-01-1980" class="form-control" >
                 </div>
 
                 <div class="form-group">

@@ -85,6 +85,12 @@ class ProfileController extends Controller
     }
 
 
+    public function viewProfile(Profile $profile){
+        // $pro = $profile;
+        // dd($profile);
+        return view('profile.viewprofile', compact('profile'));
+    }
+
     public function edit(Profile $profile){
         return view('profile.edit', compact('profile'));
     }

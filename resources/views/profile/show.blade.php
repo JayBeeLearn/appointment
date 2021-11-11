@@ -10,11 +10,11 @@
      @foreach ($pro as $prof)
     <div class="container mx-8">
         <div class="container">
-            <div class="container d-flex justify-content-between py-2">
-                <div class="">
+            <div class="row d-flex justify-content-between py-2 ">
+                <div class="my-1">
                     <a href="{{ route('appointment.index')}}" class="btn btn-info">Back To Appointments</a>
                 </div>
-                <div class="">
+                <div class="my-1">
                     <a href="{{ route('profile.edit', $prof->id)}}" class="btn btn-info">Edit Profile</a>
                 </div>
             </div>

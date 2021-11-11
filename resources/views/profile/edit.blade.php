@@ -11,6 +11,10 @@
             <form action="{{ route('profile.update', $profile->id) }}" method="POST">
                 @csrf
                 @method('PUT')
+
+                <input type="hidden" name="username" value="{{ auth()->user()->username }}">
+
+
                 <div class="form-group py-2">
                     <label for="name">Description</label>
                     <textarea name="description" placeholder="Enter Bio" class="form-control" >{{ $profile->description }}</textarea>
