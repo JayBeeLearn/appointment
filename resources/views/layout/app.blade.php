@@ -21,72 +21,46 @@
   </head>
   <body>
 
-    <div class="container">
-        <nav class="navbar navbar-toggleable-sm bg-gray navbar-inverse nav   navbar-expand ">
+        <nav class="navbar navbar-toggleable-sm bg-danger navbar-inverse">
           <div class="container">
             <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav"> 
                 <span class="navbar-toggler-icon"></span>
             </button>
-            {{-- <div class="collapse navbar-collape" id="mainNav"> --}}
-                <div class="collapse navbar-collape justify-content-between" id="mainNav">
-                    <ul class=" navbar-nav">
+            <div class="collapse navbar-collapse " id="mainNav">
+                <div class="container collapse navbar-collapse justify-content-between" id="mainNav">
+                  <div class="navbar-nav">
                       @guest
-                          <li class="nav-item">
-                            <a href="{{ route('home') }}" class="nav-link">Home</a> 
-                          </li>
+                            <a href="{{ route('home') }}" class="nav-item nav-link">Home</a> 
                       @endguest
-                        
                       @auth
-                      
-                        <li class="nav-item">
-                            <a href="{{ route('appointment.index') }}" class="nav-link">Appointments</a> 
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('appointment.confirm') }}" class="nav-link">Meetings</a> 
-                        </li> 
+                        <a href="{{ route('appointment.index') }}" class="nav-item nav-link">Appointments</a> 
+                        <a href="{{ route('appointment.confirm') }}" class="nav-item nav-link">Meetings</a> 
+                      @endauth
+                  </div>
+                  <div class="navbar-nav">
+                       @auth
+                          <a href="{{ route('profile.show') }}" class="nav-item nav-link">{{ auth()->user()->name }}</a>
+                          {{-- <a href="" class="nav-link">Logout</a> --}}
+                          <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                              <button type="submit"  class="btn text-primary nav-item nav-link ">Logout</button>
+                          </form>
                       @endauth
 
-                    </ul>
+                       @guest
+                          <a href="{{ route('register') }}" class="nav-item nav-link">Sign Up</a>
+                          <a href="{{ route('login') }}" class="nav-item nav-link">Sign In</a>
+                        @endguest
+                  </div> 
 
-                    <ul class="navbar-nav">
-
-                      @auth
-                          <li class="nav-item">
-                              <a href="{{ route('profile.show') }}" class="nav-link">{{ auth()->user()->name }}</a>
-                          </li>
-
-                          <li>
-                            
-                          </li>
-
-                          <li class="nav-item">
-                              {{-- <a href="" class="nav-link">Logout</a> --}}
-                              <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-
-                                <button type="submit" class="btn text-primary">Logout</button>
-                              </form>
-                          </li>
-                      @endauth
-
-                      @guest
-                          <li class="nav-item">
-                              <a href="{{ route('register') }}" class="nav-link">Sign Up</a>
-                          </li>
-
-                          <li class="nav-item">
-                              <a href="{{ route('login') }}" class="nav-link">Sign In</a>
-                          </li>
-                      @endguest
+                     
                           
 
                         
                     </ul>
                 </div>
-            {{-- </div> --}}
-              
+            </div>
           </div>
-          
         </nav>
 
         

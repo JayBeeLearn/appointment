@@ -7,7 +7,7 @@
             <div class=" search ">
                 <form action="{{ route('profile') }}" method="GET" role="search">
                     <input type="search" name="search" id="search" class="no-outline " placeholder="Locate a user"> 
-                    <button type="submit" class=" "><i class="fa fa-search "></i></button>
+                    <button type="submit" class="no-outline "><i class="fa fa-search "></i></button>
                 </form>
             </div> 
         </div>   
@@ -51,8 +51,7 @@
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Confirm Decline')">Decline</button>
                                     {{-- @endif --}}
-                                    
-                                    
+                               
                                 </form>
                             </td>
                         </tr>

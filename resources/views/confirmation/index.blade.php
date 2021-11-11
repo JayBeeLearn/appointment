@@ -6,11 +6,11 @@
         <div class="container d-flex justify-content-end">
             <div class=" search ">
                 <form action="{{ route('profile') }}" method="GET" role="search">
-                    <input type="search" name="search" id="myTextField" class="no-outline " placeholder="Locate a user"> 
-                    <button type="submit" class="inline "><i class="fa fa-search"></i></button>
+                    <input type="search" name="search" id="search" class="no-outline " placeholder="Locate a user"> 
+                    <button type="submit" class="no-outline "><i class="fa fa-search "></i></button>
                 </form>
             </div> 
-        </div>   
+        </div>  
 
         <div class="container mt-2">
             @if ($message = Session::get('success'))

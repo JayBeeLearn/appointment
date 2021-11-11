@@ -10,12 +10,17 @@
     border-radius: 25px;
     padding: 8px 20px;
     
+    display: inline;
+    
 }
 
 
 .no-outline{
     outline: none;
     border: none;
+    display: inline;
+    background: none;
+    /* margin: 0px 10px; */
 }
 
 .line{
