@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-center">
         <div class="container bg rounded bg-primary py-2 mx-4 ">
             <h2 class="text-center text-white">
-                Make A Meeting 
+                My Meeting 
             </h2>
         </div>
     </div>

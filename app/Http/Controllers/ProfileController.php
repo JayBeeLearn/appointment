@@ -15,7 +15,7 @@ class ProfileController extends Controller
     public function index(Request $request){
 
         $search = $request->search;
-        $profile = Profile::where('username', 'LIKE', '%' . $search . '%')->paginate(10);
+        $profile = Profile::where('username', 'LIKE', '%' . $search . '%')->paginate(5);
         // dd($profile);
         return view('profile.index', compact('profile'));
     }

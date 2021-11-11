@@ -2,15 +2,7 @@
 
 @section('content')
     <div class="container">
-   {{-- The Search bar for locating users  --}}
-        <div class="container d-flex justify-content-end my-1">
-            <div class=" search ">
-                <form action="{{ route('profile') }}" method="GET" role="search">
-                    <input type="search" name="search" id="search" class="no-outline-input " placeholder="Locate a user"> 
-                    <button type="submit" class="no-outline-button "><i class="fa fa-search "></i></button>
-                </form>
-            </div> 
-        </div> 
+       @include('include.search')
 
         <div class="container mt-2">
             @if ($message = Session::get('success'))
@@ -20,20 +12,37 @@
             @endif
         </div>
 
-        <div class="container bg py-2 rounded bg-primary my-2" >
-            <h2 class="text-center text-white">
-                Confirmed Meetings
+        <div class="container bg py-2 rounded  my-2" >
+            <h2 class="text-center ">
+                My Meetings
             </h2>
         </div>
+        <div class="container">
+            <nav class="nav justify-content-around nav-pills flex-column flex-sm-row ">
+                <a href="#previous" data-toggle="tab" class="my-2 nav-link btn btn-warning ">Previous</a>
+                <a href="#today" data-toggle="tab" class="my-2 nav-link btn btn-success">Today</a>
+                <a href="#upcoming" data-toggle="tab" class="my-2 nav-link btn btn-primary">Upcoming</a>
+            </nav>
+        </div>
 
-         <div class="container" >
-            <div class="container d-flex pull-right justify-content-end my-1">
-                <form action="{{ route('meeting.create') }}">
-                    @csrf
-                    <button class="btn btn-info" type="submit">Add New Meeting</button>
-                </form>
+        <div class="tab-content py-5">
+            <div class="tab-pane" id="previous">
+                <h2>Previous Meeting</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis esse deserunt placeat a necessitatibus velit nesciunt numquam quam quos quas.</p>
+            </div>
+
+            <div class="tab-pane active" id="today">
+                <h2>Today's Meeting</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis esse deserunt placeat a necessitatibus velit nesciunt numquam quam quos quas.</p>
+            </div>
+
+            <div class="tab-pane" id="upcoming">
+                <h2>Upcoming Meeting</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis esse deserunt placeat a necessitatibus velit nesciunt numquam quam quos quas.</p>
             </div>
         </div>
+        
+    
 
         <div class="container">
             @if(auth()->check())
@@ -64,18 +73,19 @@
                             @endforeach
                         </table>
                     </div>
-                        
                     @else()
-                        <h3 class="text-center text-danger"> You Don't have a Meeting </h3>
-                        <div class="container text-center">
-                            <a href="{{ route('meeting.create') }}" class="btn btn-primary ">Create New  Meeting Appointment</a>
+                        <div class="container text-center my-4">
+                            <h3 class=" text-danger"> You Don't have a Meeting </h3>
+                        
+                            <a href="{{ route('meeting.create') }}" class="my-4 btn btn-primary ">Create New  Meeting Appointment</a>
                         </div> 
                 @endif
             @endif
         </div>
-        
-
-        
     </div>
+    
+
     {{ $confirmations->links() }}
 @endsection
+
+  

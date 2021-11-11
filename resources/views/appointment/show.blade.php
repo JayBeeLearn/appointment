@@ -12,7 +12,11 @@
         <table class="table table-bordered my-4">
             <tr>
                 <th>Contact Person</th>
-                <td>{{ $appointment->name }}</td>
+                <td>
+                    {{-- <a href="{{ route('viewProfile', $profile->id) }}"> --}}
+                        {{ $appointment->name }}
+                    </a>
+                </td>
             </tr>
 
             <tr>

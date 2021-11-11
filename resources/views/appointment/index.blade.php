@@ -2,16 +2,8 @@
 
 @section('content')
     <div class="container">
-   {{-- The Search bar for locating users  --}}
-        <div class="container d-flex justify-content-end my-1">
-            <div class=" search ">
-                <form action="{{ route('profile') }}" method="GET" role="search">
-                    <input type="search" name="search" id="search" class="no-outline-input " placeholder="Locate a user"> 
-                    <button type="submit" class="no-outline-button "><i class="fa fa-search "></i></button>
-                </form>
-            </div> 
-        </div> 
-
+        @include('include.search')
+   
         <div class="container mt-2">
             @if ($message = Session::get('success'))
                 <div class="alert alert-success">
@@ -36,9 +28,11 @@
                     </tr>
                     @foreach($appointments as $appointment)
                         <tr>
-                            <td>{{ $appointment->name }}</td>
+                            <td> 
+                                <a href="{{ route('appointment.show', $appointment->id) }}" class="btn btn-success my-1">{{ $appointment->name }} </a>
+                            </td>
                             <td>
-                                <a href="{{ route('appointment.show', $appointment->id) }}" class="btn btn-success"> {{ $appointment->appointment_topic }}</a>
+                                 {{ $appointment->appointment_topic }}
                             </td>
                             <td style="">
                                 <form action="{{ route('appointment.destroy', $appointment->id) }}" method="POST">

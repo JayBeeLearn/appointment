@@ -52,8 +52,9 @@ class AppointmentController extends Controller
      */
     public function create(Profile $profile)
     {
-        $profi = $profile;
-        $userProfile =$profile->id;
+        $pru = $profile->user->name;
+        // dd($pru);
+        
         // dd($profi->id);
         
         // $user_id = User::get('id');
@@ -62,7 +63,7 @@ class AppointmentController extends Controller
 
         // dd($userProfile);
 
-        return view('appointment.create', compact('userProfile'));
+        return view('appointment.create', compact(['profile', 'pru']));
     }
 
     /**
@@ -100,10 +101,10 @@ class AppointmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Appointment $appointment)
+    public function show(Appointment $appointment, Profile $profile)
     {
-
-        return view('appointment.show', compact('appointment'));
+        // dd($profile);
+        return view('appointment.show', compact(['appointment', 'profile']));
     }
 
     /**

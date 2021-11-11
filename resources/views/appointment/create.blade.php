@@ -31,13 +31,13 @@
 
                 <div class="container py-2">
                     {{-- <label for="name">User ID</label> --}}
-                    <input type="hidden" placeholder="Enter User Id" class="form-control" name="profile_id" value="{{ $userProfile }}">
+                    <input type="hidden" placeholder="Enter User Id" class="form-control" name="profile_id" value="{{ $profile->id }}">
                 </div>
                 
                 
                 <div class="container py-2">
-                    <label for="name">Name</label>
-                    <input type="text" placeholder="Enter Your Name" class="form-control" name="name">
+                    {{-- <label for="name">Name</label> --}}
+                    <input type="hidden" placeholder="Enter Your Name" class="form-control" name="name" value="{{ $pru }}">
                 </div>
 
                 <div class="container py-2">

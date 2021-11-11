@@ -20,8 +20,7 @@
     
   </head>
   <body>
-
-        <nav class="navbar navbar-toggleable-sm bg-danger navbar-inverse">
+      <nav class="navbar navbar-expand-lg navbar-light navbar-inverse" style="background-color: #e3f2fd;">
           <div class="container">
             <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav"> 
                 <span class="navbar-toggler-icon"></span>
@@ -64,15 +63,14 @@
         </nav>
 
         
-        <div class="container my-1">
-            @yield('content')
-            <div class="container d-flex-justify-content-center">
-                <div class="signature" >Designed by yours truly <span class="design">
-                  <a href="https://www.facebook.com/jahaziel.uko.1">JayBee 2021</a>  </span> </div>
-            </div>
-            
-        </div>
-    </div>
+      <div class="container my-1">
+          @yield('content')
+          <div class="container d-flex-justify-content-center">
+              <div class="signature" >Designed by yours truly <span class="design">
+                <a href="https://www.facebook.com/jahaziel.uko.1">JayBee 2021</a>  </span> </div>
+          </div>
+      </div>
+   
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
