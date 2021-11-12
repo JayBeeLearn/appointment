@@ -23,7 +23,7 @@
 
                  <div class="form-group py-2">
                     <label for="date">Date of Birth</label>
-                    <input type="date" name="date" placeholder="01-01-1980" class="form-control" value="{{ $profile->date_of_birth }}">
+                    <input type="date" name="date_of_birth" placeholder="01-01-1980" class="form-control" value="{{ $profile->date_of_birth }}">
                 </div>
 
                 <div class="form-group">

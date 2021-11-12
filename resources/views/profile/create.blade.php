@@ -45,15 +45,17 @@
                     <input type="tel" name="phone_number" placeholder="+000 000 000 000" class="form-control" >
                 </div>
                 
-                 <div class="container dflex d-flex form-group py-2">
+                 <div class="row dflex d-flex form-group py-2">
                      <div class="">
                         <label for="profile_photo">Profile Photo</label>
                         <input class="file-upload-input" onchange="previewImage();" accept="image/*" type="file" name="profile_photo" id="profile_photo" width="155" height="155" >
+
+                        <div class="container py-2">
+                            <img id="preview" src="" alt="" width="155" height="155">
+                        </div>
                      </div>
 
-                     <div class="container py-2">
-                        <img id="preview" src="" alt="" width="155" height="155">
-                    </div>
+                     
                 </div>
                
 

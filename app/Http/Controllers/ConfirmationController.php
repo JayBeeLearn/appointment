@@ -4,18 +4,30 @@ namespace App\Http\Controllers;
 
 use App\Models\Appointment;
 use App\Models\Confirmations;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ConfirmationController extends Controller
 {
     public function index(Confirmations $confirmations){
+        $tday = Carbon::now();
+
+        $today = $tday->toDateString();
         $user = auth()->user()->id;
         // dd($user);
-        $confirmations = Confirmations::latest()->where('profile_id',  $user)->orWhere('user_id', $user)->paginate('3');
+        $today_meeting = Confirmations::latest()->where('profile_id',  $user)->orWhere('user_id', $user)->where('date', '=', $today)->paginate('20');
+
+        $previous_meeting = Confirmations::latest()->where('profile_id',  $user)->orWhere('user_id', $user)->where('date', '<', $today)->paginate('20');
+
+        $upcoming_meeting = Confirmations::latest()->where('profile_id',  $user)->orWhere('user_id', $user)->where('date', '>', $today)->paginate('20');
+
+        
+        // dd($today_meeting);
+        // dd($today);
 
         // dd($confirmations);
 
-        return view('confirmation.index', compact('confirmations'));
+        return view('confirmation.index', compact(['today_meeting', 'previous_meeting', 'upcoming_meeting']));
 
     }
 

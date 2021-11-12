@@ -92,16 +92,14 @@ class ProfileController extends Controller
     }
 
     public function edit(Profile $profile){
+        // dd($profile);
         return view('profile.edit', compact('profile'));
     }
 
 
     public function update(Request $request, Profile $profile){
 
-       
-
-
-        $profile->username = $request->input('username');
+        // $profile->username = $request->input('username');
         $this->validate($request, [
             'username',
             'phone_number',

@@ -60,8 +60,8 @@
                       @endauth
 
                        @guest
-                          <a href="{{ route('register') }}" class="nav-item nav-link">Sign Up</a>
-                          <a href="{{ route('login') }}" class="nav-item nav-link">Sign In</a>
+                          <a href="{{ route('register') }}" class="nav-item nav-link text-primary">Sign Up</a>
+                          <a href="{{ route('login') }}" class="nav-item nav-link text-primary">Sign In</a>
                         @endguest
                   </ul> 
                 </div>

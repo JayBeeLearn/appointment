@@ -13,23 +13,23 @@
         </a>
     </div>
     
-    <div class=" ">
+    <div class="container mx-4">
         @foreach ($profile as $user)
-            <div class="row">
-                <div class=" col-sm-4 circle">
-                    coma 
+            <div class="row my-4 mr-4 user rounded p-4 d-flex justify-content-around">
+                <div class=" col-sm-2 circle profilePix my-1" >
+                    <img src="" alt="Profile Pix" width="155px" height="155px" class="rounded">
+                    {{ $user->profile_picture }} 
                 </div>
-                <div class="col-sm-8 ">
+                
+                <div class="col-sm-10 p-4 ">
                     <h4 class="">
                          <a href="{{ route('viewProfile', $user->id) }}" class=""> {{ $user->username }}</a>
                     </h4>
-                    
-
-                     <div class="col">
-                        <small>{{ $user->gender }}</small> 
+                     <div class="pl-2">
+                        <span>{{ $user->gender }}</span> 
                     </div>
-                    <div class="col">
-                        <p>Works at <h6>{{ $user->work_place }} </h6> </p>
+                    <div class="pl-2">
+                        <p><small> Works at</small> <span class="workplace">{{ $user->work_place }}</span>   </p>
                     </div>
                 </div>
                    

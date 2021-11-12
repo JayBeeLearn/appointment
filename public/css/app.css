@@ -68,3 +68,25 @@
     text-align: center;
     margin: 3px 0px;
 }
+
+/* Used in Profile index page that returns list of users  */
+.workplace{
+    font-weight: bold;
+}
+
+
+/* Profile Picture in profile index page  */
+.profilePix{
+    width: 155px;
+    height: 155px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: url(../uploads/profilePics/1636726402.jpg);
+    /* margin: 15px; */
+}
+
+/* User's container in my profile index  */
+.user{
+    background-color: white;
+    box-shadow: 1px 3px 7px 3px rgb(166, 166, 247);
+}

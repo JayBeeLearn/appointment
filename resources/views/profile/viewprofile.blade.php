@@ -27,7 +27,7 @@
                         <div class="card">
                             <h3 class="card-title head "> Profile Photo</h3>
                                
-                                <img src="{{ asset('/uploads/profilePics/1636555271.png') }}" alt="" width="155" height="155" class="card-img-top img-fluid" >
+                                <img src="{{ asset('/uploads/profilePics/1636555271.png') }}" alt="" width="155px" height="155px" class="card-img-top " >
                                 {{-- <img src="{{ url('img/rob.jpg') }}" alt="" width="155" height="155" class="card-img-top img-fluid"> --}}
 
                         </div>

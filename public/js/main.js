@@ -15,3 +15,5 @@ function previewImage(){
         fileReader.readAsDataURL(file[0]); 
     }
 }
+
+
