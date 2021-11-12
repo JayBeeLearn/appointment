@@ -26,6 +26,12 @@ class AppointmentController extends Controller
 
         $user = auth()->user()->id;
         $appointments = Appointment::latest()->where('profile_id',  $user)->orWhere('user_id', $user)->paginate('3');
+        // $apptime = $appointments->time;
+
+        // $apptim = time('h:i:s a m/d/y', strtotime($apptime));
+
+        // dd($apptim);
+
 
         // $appointments = $appointment->paginate(3);
 

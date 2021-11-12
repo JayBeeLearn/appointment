@@ -90,3 +90,9 @@
     background-color: white;
     box-shadow: 1px 3px 7px 3px rgb(166, 166, 247);
 }
+
+/* Time displayed in appointment show  */
+
+.small{
+    font-size: small;
+}

@@ -11,6 +11,7 @@
                 </div>
             @endif
         </div>
+       
 
         <div class="container bg py-2 rounded bg-primary my-2" >
             <h2 class="text-center text-white">
@@ -20,37 +21,37 @@
        
         @if(auth()->check())
             @if(count($appointments)>0)
-                <table class="table table-bordered table-responsive">
-                    <tr>
-                        <th>Appointment With</th>
-                        <th>Purpose of Appointment</th>
-                        <th>Quick Actions</th>
-                    </tr>
-                    @foreach($appointments as $appointment)
-                        <tr>
-                            <td> 
-                                <a href="{{ route('appointment.show', $appointment->id) }}" class="btn btn-success my-1">{{ $appointment->name }} </a>
-                            </td>
-                            <td>
-                                 {{ $appointment->appointment_topic }}
-                            </td>
-                            <td style="">
-                                <form action="{{ route('appointment.destroy', $appointment->id) }}" method="POST">
-                                    {{-- @if (auth()->user()->id = $profile) --}}
-
-                                        <a href="{{ route('confirm', $appointment->id) }}" class="btn btn-primary" onclick="return confirm('Sure you want to confirm meeting?')"> Confirm</a>
-                                    {{-- @else() --}}
-                                        <a href="{{ route('appointment.edit', $appointment->id) }}" class="btn btn-warning my-1"> Reschedule</a>
-                                        @csrf 
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Confirm Decline')">Decline</button>
-                                    {{-- @endif --}}
+               
+                     @foreach($appointments as $appointment)
+                <div class="container user rounded my-4 p-4">
+                    <div class="container text-center">
+                             <small>Appointment With</small>
+                            <h4>{{ $appointment->name }} <small class="small"> by {{ $appointment->time }}</small class="small"></h4> 
+                            
+                           <a href="{{ route('appointment.show', $appointment->id) }}" class="my-1"> <h4> {{ $appointment->appointment_topic }}</h4> </a>
+                            <small> Being Purpose of Appointment</small>
+                    </div>
+                    <div class=" text-center my-2">
+                        <form action="{{ route('appointment.destroy', $appointment->id) }}" method="POST">
+                            {{-- @if (auth()->user()->id = $profile) --}}
+                                
+                                    <a href="{{ route('confirm', $appointment->id) }}" class="btn btn-primary" onclick="return confirm('Sure you want to confirm meeting?')"> Confirm</a>
+                            {{-- @else() --}}
+                            
+                                <a href="{{ route('appointment.edit', $appointment->id) }}" class="btn btn-warning my-1"> Reschedule</a>
+                            
+                                @csrf 
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Confirm Decline')">Decline</button>
+                            
+                            {{-- @endif --}}
                                
-                                </form>
-                            </td>
-                        </tr>
+                        </form>
+                    </div>
+                </div>
                     @endforeach
-                </table>
+                
+                   
             @else()
                 <h3 class="text-center text-danger"> You Don't have an appointment </h3>
                 <div class="container text-center">

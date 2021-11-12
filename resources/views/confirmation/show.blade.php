@@ -2,6 +2,9 @@
 
 @section('content')
 
+    <div class="my-1">
+        <a href="{{ route('appointment.confirm')}}" class="btn btn-info">Back</a>
+    </div>
 
     <div class="container bg rounded bg-primary py-2">
         <h2 class="text-center text-white">My Appointment with {{ $confirmations->name }}</h2>
