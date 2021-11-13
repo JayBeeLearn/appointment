@@ -38,11 +38,7 @@
                                 
                                     <a href="{{ route('confirm', $appointment->id) }}" class="btn btn-primary" onclick="return confirm('Sure you want to confirm meeting?')"> Confirm</a>
                                      
-                                    <a href="{{ route('appointment.edit', $appointment->id) }}" class="btn btn-warning my-1"> Reschedule</a>
-                            
-                                    @csrf 
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Confirm Decline')">Decline</button>
+                                
                             {{-- @else() --}}
                             
                                 <a href="{{ route('appointment.edit', $appointment->id) }}" class="btn btn-warning my-1"> Reschedule</a>
