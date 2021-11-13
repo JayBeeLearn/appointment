@@ -81,7 +81,16 @@
     height: 155px;
     border: 1px solid black;
     border-radius: 50%;
-    background-image: url(../uploads/profilePics/1636726402.jpg);
+    /* background-image: ; */
+    /* margin: 15px; */
+}
+
+.profilePic{
+    width: 155px;
+    height: 155px;
+    padding: 2px;
+    align-items: center;
+    align-content: center;
     /* margin: 15px; */
 }
 

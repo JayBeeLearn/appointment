@@ -18,7 +18,10 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        // dd($user);
+        $user = auth()->user()->id;
+        $profile = Appointment::latest('profile_id')->where('profile_id', '!=', $user)->first();
+
+        // dd($profile->id);
 
         // $appointments = DB::table('appointments')->select(array('user_id', 'profile_id'))->where('user_id'||'profile_id',  $user)->get();
         // $appointments = DB::table('appointments')->select(array('user_id', 'profile_id'),  $user)->get();>
@@ -28,9 +31,10 @@ class AppointmentController extends Controller
         $appointments = Appointment::latest()->where('profile_id',  $user)->orWhere('user_id', $user)->paginate('3');
         // $apptime = $appointments->time;
 
+
         // $apptim = time('h:i:s a m/d/y', strtotime($apptime));
 
-        // dd($apptim);
+        // dd);
 
 
         // $appointments = $appointment->paginate(3);
@@ -39,7 +43,6 @@ class AppointmentController extends Controller
         // $userId = auth()->user()->id;
         // $profile = Profile::with('user')->where('user_id', '!=', $userId)->get('id');
 
-        // dd($profile);
 
 
 
@@ -48,7 +51,7 @@ class AppointmentController extends Controller
 
         
         // $appointments = Appointment::latest()->paginate(3);
-        return view('appointment.index', compact(['appointments']))->with(request()->input('page'));
+        return view('appointment.index', compact(['appointments', 'profile']))->with(request()->input('page'));
     }
 
     /**

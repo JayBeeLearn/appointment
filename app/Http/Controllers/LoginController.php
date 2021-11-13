@@ -25,11 +25,11 @@ class LoginController extends Controller
 
 
         //Check for wrong Password
-        if (!Auth::attempt($request->only('email', 'password'))){
-            dd('Wrong Password');
+        if (!Auth::attempt($request->only('email', 'password'), $request->remember)){
+            return redirect()->route('login')->with('message', 'Wrong password or email, Try Again');
         }
 
-        return redirect()->route('appointment.index');
+        return redirect()->intended('appointment');
 
     }
 }

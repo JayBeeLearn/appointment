@@ -23,9 +23,11 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <h3 class="card-title head "> Profile Photo</h3>
+                               <div class="card-block profilePic justify-content-center" >
+                                     <img src="{{ asset('/uploads/profilePics/'. $prof->profile_photo) }}" alt="" width="155px" height="155px" class="card-img-top " >
+                                    {{-- <img src="{{ url('img/rob.jpg') }}" alt="" width="155" height="155" class="card-img-top img-fluid"> --}}
+                               </div>
                                
-                                <img src="{{ asset('/uploads/profilePics/1636555271.png') }}" alt="" width="155" height="155" class="card-img-top img-fluid" >
-                                {{-- <img src="{{ url('img/rob.jpg') }}" alt="" width="155" height="155" class="card-img-top img-fluid"> --}}
 
                         </div>
                     </div>

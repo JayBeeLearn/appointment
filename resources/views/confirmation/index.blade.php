@@ -57,8 +57,8 @@
                                 {{ $previous_meeting->links() }}
                         @else()
                             <div class="container text-center my-4">
-                                <h3 class=" text-danger"> You Don't have a Meeting </h3>
-
+                                <h3 class=" text-danger"> You Don't have any Previous Meeting   </h3>
+                                        Check <a href="#upcoming" data-toggle="tab" class="my-2 nav-link btn btn-primary">Upcoming</a>
                                 <a href="{{ route('meeting.create') }}" class="my-4 btn btn-primary ">Create New Meeting Appointment</a>
                             </div>
                         @endif
@@ -97,8 +97,8 @@
                             {{ $today_meeting->links() }}
                         @else()
                             <div class="container text-center my-4">
-                                <h3 class=" text-danger"> You Don't have a Meeting </h3>
-
+                                <h3 class=" text-danger"> You Don't have a Meeting Today </h3>
+                                    Check <a href="#upcoming" data-toggle="tab" class="my-2 nav-link btn btn-primary">Upcoming</a>
                                 <a href="{{ route('meeting.create') }}" class="my-4 btn btn-primary ">Create New Meeting Appointment</a>
                             </div>
                         @endif

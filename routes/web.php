@@ -43,47 +43,44 @@ Route::get('create', [LogoutController::class, 'external'])->name('create');
 
 //Profile Routes 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::post('/profile', [ProfileController::class, 'store'])->name('profile.store');
-Route::get('/profile/show/', [ProfileController::class, 'show'])->name('profile.show');
-Route::get('/profile/show/{profile}', [ProfileController::class, 'viewProfile'])->name('viewProfile');
+Route::post('/profile', [ProfileController::class, 'store'])->name('profile.store')->middleware('auth');
+Route::get('/profile/show/', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');
+Route::get('/profile/show/{profile}', [ProfileController::class, 'viewProfile'])->name('viewProfile')->middleware('auth');
 
-Route::get('/profile/create', [ProfileController::class, 'create'])->name('profile.create');
-Route::get('profile/edit/{profile}', [ProfileController::class, 'edit'])->name('profile.edit');
-Route::put('profile/{profile}', [ProfileController::class, 'update'])->name('profile.update');
+Route::get('/profile/create', [ProfileController::class, 'create'])->name('profile.create')->middleware('auth');
+Route::get('profile/edit/{profile}', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
+Route::put('profile/{profile}', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
 
 // Route::get('/', [ProfileController::class, 'store'])->name('profile.store');
 
 
 
 // Appointment Routes 
-Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment.index');
-Route::get('/appointment/create/{profile}', [AppointmentController::class, 'create'])->name('appointment.create');
-Route::get('/appointment/personalcreate', [AppointmentController::class, 'percreate'])->name('appointment.percreate');
+Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment.index')->middleware('auth');
+Route::get('/appointment/create/{profile}', [AppointmentController::class, 'create'])->name('appointment.create')->middleware('auth');
+Route::get('/appointment/personalcreate', [AppointmentController::class, 'percreate'])->name('appointment.percreate')->middleware('auth');
 
 Route::post('/appointments', [AppointmentController::class, 'store'])->name('appointment.store');
 Route::post('/appointment', [AppointmentController::class, 'perstore'])->name('appointment.perstore');
 
-Route::post('/appointment/{appointment}', [AppointmentController::class, 'confirm'])->name('appointment.confirm');
-Route::get('/appointment/show/{appointment}', [AppointmentController::class, 'show'])->name('appointment.show');
-Route::get('/appointment/edit/{appointment}', [AppointmentController::class, 'edit'])->name('appointment.edit');
+Route::post('/appointment/{appointment}', [AppointmentController::class, 'confirm'])->name('appointment.confirm')->middleware('auth');
+Route::get('/appointment/show/{appointment}', [AppointmentController::class, 'show'])->name('appointment.show')->middleware('auth');
+Route::get('/appointment/edit/{appointment}', [AppointmentController::class, 'edit'])->name('appointment.edit')->middleware('auth');
 Route::put('/appointment/{appointment}', [AppointmentController::class, 'update'])->name('appointment.update');
-Route::delete('/appointment/{appointment}', [AppointmentController::class, 'destroy'])->name('appointment.destroy');
+Route::delete('/appointment/{appointment}', [AppointmentController::class, 'destroy'])->name('appointment.destroy')->middleware('auth');
 
 
-Route::get('appointment/confirmation', [ConfirmationController::class, 'index'])->name('appointment.confirm');
-Route::get('/confirmation/show/{confirmations}', [ConfirmationController::class, 'show'])->name('confirmation.show');
-Route::get('/confirmation/edit/{confirmations}', [ConfirmationController::class, 'edit'])->name('confirmations.edit');
-Route::delete('/confirmation/{confirmations}', [ConfirmationController::class, 'destroy'])->name('confirmations.destroy');
+Route::get('appointment/confirmation', [ConfirmationController::class, 'index'])->name('appointment.confirm')->middleware('auth');
+Route::get('/confirmation/show/{confirmations}', [ConfirmationController::class, 'show'])->name('confirmation.show')->middleware('auth');
+Route::get('/confirmation/edit/{confirmations}', [ConfirmationController::class, 'edit'])->name('confirmations.edit')->middleware('auth');
+Route::delete('/confirmation/{confirmations}', [ConfirmationController::class, 'destroy'])->name('confirmations.destroy')->middleware('auth');
 
 Route::put('/confirmation/{confirmations}', [ConfirmationController::class, 'update'])->name('confirmations.update');
 
-Route::get('/meeting/create/', [ConfirmationController::class, 'meeting_create'])->name('meeting.create');
+Route::get('/meeting/create/', [ConfirmationController::class, 'meeting_create'])->name('meeting.create')->middleware('auth');
 Route::post('/meeting', [ConfirmationController::class, 'store'])->name('meeting.store');
 
 
 
-
-
-
-Route::get('/appointment/{appointment}', [ConfirmationController::class, 'confirm'])->name('confirm');
+Route::get('/appointment/{appointment}', [ConfirmationController::class, 'confirm'])->name('confirm')->middleware('auth');
 

@@ -30,6 +30,7 @@
                 <div class="form-group">
                     <label for="gender">Gender</label>
                     <select name="gender" id="gender">
+                        <option value="">Select Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
@@ -45,17 +46,14 @@
                     <input type="tel" name="phone_number" placeholder="+000 000 000 000" class="form-control" >
                 </div>
                 
-                 <div class="row dflex d-flex form-group py-2">
-                     <div class="">
+                 <div class="row d-flex form-group py-2">
+                     <div class="col col-sm-6">
                         <label for="profile_photo">Profile Photo</label>
                         <input class="file-upload-input" onchange="previewImage();" accept="image/*" type="file" name="profile_photo" id="profile_photo" width="155" height="155" >
-
-                        <div class="container py-2">
+                    </div>
+                        <div class="col col-sm-6 py-2">
                             <img id="preview" src="" alt="" width="155" height="155">
                         </div>
-                     </div>
-
-                     
                 </div>
                
 

@@ -44,7 +44,7 @@
             
 
                 <div class="container text-center py-2">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
                 </div>
             </form>
 

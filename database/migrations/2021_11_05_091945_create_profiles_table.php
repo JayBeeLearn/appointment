@@ -17,7 +17,7 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
             $table->string('username');
             $table->string('phone_number')->nullable();
-            $table->binary('profile_photo')->nullable();
+            $table->string('profile_photo')->nullable();
             $table->string('gender')->nullable();
             $table->string('description')->nullable();
             $table->date('date_of_birth')->nullable();

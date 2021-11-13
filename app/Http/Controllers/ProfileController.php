@@ -12,7 +12,8 @@ use Symfony\Component\Console\Input\Input;
 class ProfileController extends Controller
 {
     //Returns all the users profile in the index
-    public function index(Request $request){
+    public function index(Request $request)
+    {
 
         $search = $request->search;
         $profile = Profile::where('username', 'LIKE', '%' . $search . '%')->paginate(5);
@@ -20,11 +21,13 @@ class ProfileController extends Controller
         return view('profile.index', compact('profile'));
     }
 
-    public function create(){
+    public function create()
+    {
         return view('profile.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         $profile = new Profile();
 
@@ -40,12 +43,12 @@ class ProfileController extends Controller
         if ($request->hasFile('profile_photo')) {
             $file = $request->file('profile_photo');
             $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
+            $pictureName = $file->getClientOriginalName();
+            $filename = $pictureName . '.' . $extension;
             $file->move('uploads/profilePics/', $filename);
             $profile->profile_photo = $filename;
         } else {
-            return 
-            $profile->profile_photo = '';
+            $profile->profile_photo = '1636758065.jpg';
         }
         // dd($profile);
         $profile->save();
@@ -64,40 +67,33 @@ class ProfileController extends Controller
         // Profile::create($request->all());
 
         return redirect()->route('appointment.index')->with('message', 'Account and Profile Created Successfully');
-
     }
 
-    public function show(Profile $profile){
-        // $pro = Profile::get('id');
-        
-        // $uID = User::get('id')->where('id', $pro);
-        // // dd($uID);
-        // $user = User::find($uID);
-        // // dd($user);
-
+    public function show(Profile $profile)
+    {
         $user = auth()->user()->id;
         $pro = Profile::where('user_id', $user)->get();
-        // $prof = $pro->username;
-
-        // dd($pro);
-   
+       
         return view('profile.show', compact('pro'));
     }
 
 
-    public function viewProfile(Profile $profile){
+    public function viewProfile(Profile $profile)
+    {
         // $pro = $profile;
         // dd($profile);
         return view('profile.viewprofile', compact('profile'));
     }
 
-    public function edit(Profile $profile){
+    public function edit(Profile $profile)
+    {
         // dd($profile);
         return view('profile.edit', compact('profile'));
     }
 
 
-    public function update(Request $request, Profile $profile){
+    public function update(Request $request, Profile $profile)
+    {
 
         // $profile->username = $request->input('username');
         $this->validate($request, [
@@ -109,11 +105,28 @@ class ProfileController extends Controller
             'work_place',
         ]);
 
-        // dd($request);
+        $profil = $profile;
+        $profil->username = $request->input('username');
+        $profil->phone_number = $request->input('phone_number');
+        $profil->gender = $request->input('gender');
+        $profil->description = $request->input('description');
+        $profil->date_of_birth = $request->input('date_of_birth');
+        $profil->work_place = $request->input('work_place');
+        $profil->user_id = $request->input('user_id');
 
-        $profile->update($request->all());
+
+        if ($request->hasFile('profile_photo')) {
+            $file = $request->file('profile_photo');
+            $extension = $file->getClientOriginalExtension();
+            $pictureName = $file->getClientOriginalName();
+            $filename = $pictureName . '.' . $extension;
+            $file->move('uploads/profilePics/', $filename);
+            $profil->profile_photo = $filename;
+        }
+
+
+        $profil->update();
 
         return redirect()->route('appointment.index')->with('success', 'Profile Updated');
-
     }
 }

@@ -63,6 +63,8 @@ class ConfirmationController extends Controller
         // $user = auth()->user()->id;
         // $appointments = Appointment::latest()->where('profile_id',  $user)->get();
 
+        // $this->authorize('delete', $appointment);
+        
         $appoint = $appointment;
         // dd($appoint->id);
 
