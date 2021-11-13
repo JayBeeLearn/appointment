@@ -26,28 +26,38 @@
                          
                 <div class="container user rounded my-4 p-4">
                     <div class="container text-center">
-                             <small>Appointment With</small>
-                            <h4>{{ $appointment->name }} <small class="small"> on {{ $appointment->date }}</small class="small"></h4> 
+                            @if (auth()->user()->id === $appointment->profile_id)
+                                <small>Appointment With</small>
+                                <h4>{{ $appointment->user->name }} <small class="small"> on {{ $appointment->date }}</small class="small"></h4> 
+                            @else()
+                                <small>Appointment With</small>
+                                <h4>{{ $appointment->name }} <small class="small"> on {{ $appointment->date }}</small class="small"></h4> 
+
+                            @endif
                             
                            <a href="{{ route('appointment.show', $appointment->id) }}" class="my-1"> <h4> {{ $appointment->appointment_topic }}</h4> </a>
                             <small> Being Purpose of Appointment</small>
                     </div>
                     <div class=" text-center my-2">
                         <form action="{{ route('appointment.destroy', $appointment->id) }}" method="POST">
-                            {{-- @if (auth()->user()->id != $profile->id) --}}
-                                
+
+                            @if (auth()->user()->id === $appointment->profile_id)
                                     <a href="{{ route('confirm', $appointment->id) }}" class="btn btn-primary" onclick="return confirm('Sure you want to confirm meeting?')"> Confirm</a>
+                                     <a href="{{ route('appointment.edit', $appointment->id) }}" class="btn btn-warning my-1"> Reschedule</a>
+                            
+                                @csrf 
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Confirm Decline')">Decline</button>
                                      
-                                
-                            {{-- @else() --}}
+                            @else()
                             
                                 <a href="{{ route('appointment.edit', $appointment->id) }}" class="btn btn-warning my-1"> Reschedule</a>
                             
                                 @csrf 
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('Confirm Decline')">Decline</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Confirm Decline')">Delete</button>
                             
-                            {{-- @endif --}}
+                            @endif
                                
                         </form>
                     </div>

@@ -33,9 +33,14 @@
                             @foreach($previous_meeting as $confirmation)
                                 <div class="container user rounded my-4 p-4">
                                     <div class="container text-center">
+                                    @if (auth()->user()->id === $confirmation->profile_id)
+
+                                        <small>Appointment With</small>
+                                        <h4>{{ $confirmation->user->name }} <small class="small"> by {{ $confirmation->time }}</small class="small"></h4>
+                                    @else()
                                         <small>Appointment With</small>
                                         <h4>{{ $confirmation->name }} <small class="small"> by {{ $confirmation->time }}</small class="small"></h4>
-
+                                    @endif
                                         <a href="{{ route('confirmation.show', $confirmation->id) }}" class="my-1">
                                         <h4> {{ $confirmation->appointment_topic }}</h4> </a>
                                         <small> Being Purpose of Appointment</small>
@@ -58,7 +63,7 @@
                         @else()
                             <div class="container text-center my-4">
                                 <h3 class=" text-danger"> You Don't have any Previous Meeting   </h3>
-                                        Check <a href="#upcoming" data-toggle="tab" class="my-2 nav-link btn btn-primary">Upcoming</a>
+                                        Check <a href="#upcoming" data-toggle="tab" class="my-2  btn btn-primary">Upcoming</a> <span class="mx-4">OR</span>
                                 <a href="{{ route('meeting.create') }}" class="my-4 btn btn-primary ">Create New Meeting Appointment</a>
                             </div>
                         @endif
@@ -73,8 +78,14 @@
                                 @foreach($today_meeting as $confirmation)
                                     <div class="container user rounded my-4 p-4">
                                         <div class="container text-center">
-                                            <small>Appointment With</small>
-                                            <h4>{{ $confirmation->name }} <small class="small"> by {{ $confirmation->time }}</small class="small"></h4>
+                                            @if (auth()->user()->id === $confirmation->profile_id)
+
+                                                <small>Appointment With</small>
+                                                <h4>{{ $confirmation->user->name }} <small class="small"> by {{ $confirmation->time }}</small class="small"></h4>
+                                            @else()
+                                                <small>Appointment With</small>
+                                                <h4>{{ $confirmation->name }} <small class="small"> by {{ $confirmation->time }}</small class="small"></h4>
+                                            @endif
 
                                             <a href="{{ route('confirmation.show', $confirmation->id) }}" class="my-1">
                                                 <h4> {{ $confirmation->appointment_topic }}</h4>
@@ -98,7 +109,7 @@
                         @else()
                             <div class="container text-center my-4">
                                 <h3 class=" text-danger"> You Don't have a Meeting Today </h3>
-                                    Check <a href="#upcoming" data-toggle="tab" class="my-2 nav-link btn btn-primary">Upcoming</a>
+                                    Check <a href="#upcoming" data-toggle="tab" class="my-2  btn btn-primary">Upcoming</a> <span class="mx-4">OR</span>
                                 <a href="{{ route('meeting.create') }}" class="my-4 btn btn-primary ">Create New Meeting Appointment</a>
                             </div>
                         @endif
@@ -115,9 +126,14 @@
                                 @foreach($upcoming_meeting as $confirmation)
                                     <div class="container user rounded my-4 p-4">
                                         <div class="container text-center">
-                                            <small>Appointment With</small>
-                                            <h4>{{ $confirmation->name }} <small class="small"> by {{ $confirmation->time }}</small class="small"></h4>
+                                            @if (auth()->user()->id === $confirmation->profile_id)
 
+                                                <small>Appointment With</small>
+                                                <h4>{{ $confirmation->user->name }} <small class="small"> by {{ $confirmation->time }}</small class="small"></h4>
+                                            @else()
+                                                <small>Appointment With</small>
+                                                <h4>{{ $confirmation->name }} <small class="small"> by {{ $confirmation->time }}</small class="small"></h4>
+                                            @endif
                                             <a href="{{ route('confirmation.show', $confirmation->id) }}" class="my-1">
                                                 <h4> {{ $confirmation->appointment_topic }}</h4>
                                             </a>
