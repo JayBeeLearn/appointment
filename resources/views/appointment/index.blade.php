@@ -34,7 +34,7 @@
                     </div>
                     <div class=" text-center my-2">
                         <form action="{{ route('appointment.destroy', $appointment->id) }}" method="POST">
-                            @if (auth()->user()->id != $profile->id)
+                            {{-- @if (auth()->user()->id != $profile->id) --}}
                                 
                                     <a href="{{ route('confirm', $appointment->id) }}" class="btn btn-primary" onclick="return confirm('Sure you want to confirm meeting?')"> Confirm</a>
                                      
@@ -43,7 +43,7 @@
                                     @csrf 
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('Confirm Decline')">Decline</button>
-                            @else()
+                            {{-- @else() --}}
                             
                                 <a href="{{ route('appointment.edit', $appointment->id) }}" class="btn btn-warning my-1"> Reschedule</a>
                             
@@ -51,7 +51,7 @@
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" onclick="return confirm('Confirm Decline')">Decline</button>
                             
-                            @endif
+                            {{-- @endif --}}
                                
                         </form>
                     </div>
