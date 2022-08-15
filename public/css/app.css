@@ -1,21 +1,19 @@
-.come{
+.come {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 150px;
     color: red;
 }
 
-.search{
+.search {
     /* margin-left: 58vw; */
     border: 1px solid black;
     border-radius: 25px;
     padding: 8px 20px;
-    
+
     display: inline;
-    
 }
 
-
-.no-outline-input{
+.no-outline-input {
     outline: none;
     border: none;
     display: inline;
@@ -24,7 +22,7 @@
     /* margin: 0px 10px; */
 }
 
-.no-outline-button{
+.no-outline-button {
     outline: none;
     border: none;
     display: inline;
@@ -32,35 +30,30 @@
     /* margin: 0px 10px; */
 }
 
-.line{
+.line {
     display: inline;
 }
 
-
 /* Profile Display Head  */
-.head{
+.head {
     background-color: rgb(211, 211, 211);
     padding: 10px;
-    
 }
 
-.display{
+.display {
     background-color: rgb(245, 235, 235);
     padding: 10px;
     margin: 0px 0px 20px 35px;
     border-radius: 5px;
-    margin-top: 0px !important; 
-
+    margin-top: 0px !important;
 }
 
-
-
 /* Profile Display Head ends Here  */
-.signature{
+.signature {
     text-align: center;
 }
 
-.design{
+.design {
     color: rgb(2, 5, 175);
     font-weight: bold;
     border: 1px solid rgb(1, 83, 1);
@@ -70,13 +63,12 @@
 }
 
 /* Used in Profile index page that returns list of users  */
-.workplace{
+.workplace {
     font-weight: bold;
 }
 
-
 /* Profile Picture in profile index page  */
-.profilePix{
+.profilePix {
     width: 155px;
     height: 155px;
     border: 1px solid black;
@@ -85,23 +77,28 @@
     /* margin: 15px; */
 }
 
-.profilePic{
-    width: 155px;
-    height: 155px;
-    padding: 2px;
-    align-items: center;
-    align-content: center;
-    /* margin: 15px; */
-}
 
+/* round profile picture  */
+.profilePicture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    margin: 10px auto;
+}
 /* User's container in my profile index  */
-.user{
+.user {
     background-color: white;
     box-shadow: 1px 3px 7px 3px rgb(166, 166, 247);
 }
 
 /* Time displayed in appointment show  */
 
-.small{
+.small {
     font-size: small;
+}
+
+.centerVertical{
+    margin: auto;
+    /* text-align: center; */
 }

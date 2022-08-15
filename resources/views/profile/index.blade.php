@@ -15,13 +15,13 @@
     
     <div class="container mx-2">
         @foreach ($profile as $user)
-            <div class="row my-4 mr-4 user rounded p-4 d-flex justify-content-around">
-                <div class=" col-sm-2 circle profilePix my-1" >
-                    <img src="{{ asset('/uploads/profilePics/'. $user->profile_photo) }}" alt="Profile Pix" width="155px" height="155px" class="rounded">
+            <div class="row my-4 mr-4 user rounded p-2 d-flex justify-content-around">
+                <div class=" col-sm-4" >
+                    <img src="{{ asset('/uploads/profilePics/'. $user->profile_photo) }}" alt="Profile Pix" width="155px" height="155px" class="profilePicture">
                     {{ $user->profile_picture }} 
                 </div>
                 
-                <div class="col-sm-10 p-4 ">
+                <div class="col-sm-8 p-2 centerVertical">
                     <h4 class="">
                          <a href="{{ route('viewProfile', $user->id) }}" class=""> {{ $user->username }}</a>
                     </h4>

@@ -21,10 +21,10 @@
             <div class="container">
                 <div class="row my-4">
                     <div class="col-lg-6">
-                        <div class="card">
+                        <div class="card my-2">
                             <h3 class="card-title head "> Profile Photo</h3>
-                               <div class="card-block profilePic justify-content-center" >
-                                     <img src="{{ asset('/uploads/profilePics/'. $prof->profile_photo) }}" alt="" width="155px" height="155px" class="card-img-top " >
+                               <div class="card-block " >
+                                     <img src="{{ asset('/uploads/profilePics/'. $prof->profile_photo) }}" alt="" width="200px" height="200px" class="card-img-top profilePicture" >
                                     {{-- <img src="{{ url('img/rob.jpg') }}" alt="" width="155" height="155" class="card-img-top img-fluid"> --}}
                                </div>
                                
@@ -36,7 +36,7 @@
                         <div class="card my-2">
                             <h3 class="card-title head"> Bio</h3>
                             <div class="card-block display">
-                                <h6>{{ $prof->description }}</h6>
+                                <h6>{{ $prof->description }} </h6>
                             </div>
                         </div>
                     </div>
