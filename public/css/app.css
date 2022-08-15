@@ -56,8 +56,9 @@
 .design {
     color: rgb(2, 5, 175);
     font-weight: bold;
-    border: 1px solid rgb(1, 83, 1);
+    /* border: 1px solid rgb(1, 83, 1); */
     padding: 2px 4px;
+    background-color: antiquewhite;
     text-align: center;
     margin: 3px 0px;
 }
@@ -101,4 +102,10 @@
 .centerVertical{
     margin: auto;
     /* text-align: center; */
+}
+
+.footer{
+    position: fixed;
+    bottom: 5px;
+    width: 100%;
 }
